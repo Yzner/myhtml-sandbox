@@ -26,5 +26,13 @@ name="radio_group" value="option2">
 <!-- Submit button -->
 <input type="submit" value="Submit">
 </form>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    var form = event.target;
+    var formData = new FormData(form);
+    for (var pair of formData.entries()) {console.log(pair[0] + ": " + pair[1]);}
+    });
+    </script>
 </body>
 </html>
